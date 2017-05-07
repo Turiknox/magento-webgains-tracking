@@ -17,6 +17,11 @@ class Turiknox_Webgains_Block_Webgains extends Mage_Checkout_Block_Onepage_Succe
      */
     protected $_order;
 
+    /*
+     * Webgains XML Enable Path
+     */
+    const XML_PATH_WG_ENABLE = 'webgains/general/enable';
+
     /**
      * Webgains Program ID
      */
@@ -31,6 +36,14 @@ class Turiknox_Webgains_Block_Webgains extends Mage_Checkout_Block_Onepage_Succe
      * Webgains Version
      */
     const WG_VERSION = '1.2';
+
+    /**
+     *
+     */
+    public function isEnabled()
+    {
+        return Mage::getStoreConfigFlag(self::XML_PATH_WG_ENABLE);
+    }
 
     /**
      * Get Webgains Program ID

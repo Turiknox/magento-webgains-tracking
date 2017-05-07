@@ -21,32 +21,34 @@
     $couponCode = $this->escapeHtml($this->getCouponCode());
     $items = $this->escapeHtml($this->getWebGainsItemData());
 ?>
-<script type="text/javascript">
-    var wgOrderReference = '<?php echo $orderReference; ?>';
-    var wgOrderValue = '<?php echo $orderTotal; ?>';
-    var wgEventID = <?php echo $webgainsEventId; ?>;
-    var wgComment = "";
-    var wgLang = '<?php echo $lang; ?>';
-    var wgsLang = "javascript-client";
-    var wgVersion = '<?php echo $webgainsVersion; ?>';
-    var wgProgramID = <?php echo $webgainsProgramId; ?>;
-    var wgSubDomain = "track";
-    var wgCheckSum = "";
-    var wgItems = '<?php echo $items; ?>';
-    var wgVoucherCode = '<?php echo $couponCode; ?>';
-    var wgCustomerID = "";
-    var wgCurrency = '<?php echo $currency; ?>';
+<?php if ($this->isEnabled()): ?>
+    <script type="text/javascript">
+        var wgOrderReference = '<?php echo $orderReference; ?>';
+        var wgOrderValue = '<?php echo $orderTotal; ?>';
+        var wgEventID = <?php echo $webgainsEventId; ?>;
+        var wgComment = "";
+        var wgLang = '<?php echo $lang; ?>';
+        var wgsLang = "javascript-client";
+        var wgVersion = '<?php echo $webgainsVersion; ?>';
+        var wgProgramID = <?php echo $webgainsProgramId; ?>;
+        var wgSubDomain = "track";
+        var wgCheckSum = "";
+        var wgItems = '<?php echo $items; ?>';
+        var wgVoucherCode = '<?php echo $couponCode; ?>';
+        var wgCustomerID = "";
+        var wgCurrency = '<?php echo $currency; ?>';
 
-    if(location.protocol.toLowerCase() === "https:") wgProtocol="https";
-    else wgProtocol = "http";
-    wgUri = wgProtocol + "://" + wgSubDomain + ".webgains.com/transaction.html" + "?wgver=" + wgVersion +
-        "&wgprotocol=" + wgProtocol + "&wgsubdomain=" + wgSubDomain + "&wgslang=" + wgsLang + "&wglang=" + wgLang +
-        "&wgprogramid=" + wgProgramID + "&wgeventid=" + wgEventID + "&wgvalue=" + wgOrderValue + "&wgchecksum=" +
-        wgCheckSum + "&wgorderreference="  + wgOrderReference + "&wgcomment=" + encodeURIComponent(wgComment) + "&wglocation=" +
-        encodeURIComponent(document.referrer) + "&wgitems=" + encodeURIComponent(wgItems) + "&wgcustomerid=" + encodeURIComponent(wgCustomerID) +
-        "&wgvouchercode=" + encodeURIComponent(wgVoucherCode) + "&wgCurrency=" + encodeURIComponent(wgCurrency);
-    document.write('<sc'+'ript language="JavaScript"  type="text/javascript" src="'+wgUri+'"></sc'+'ript>');
-</script>
-<noscript>
-    <img src="http://track.webgains.com/transaction.html?wgver=<?php echo $webgainsVersion; ?>&wgprogramid=<?php echo $webgainsProgramId; ?>&wgrs=1&wgvalue=<?php echo $orderTotal; ?>&wgeventid=<?php echo $webgainsEventId; ?>&wgorderreference=<?php echo $orderReference; ?>&wgitems=<?php echo $items; ?>&wgvouchercode=<?php echo $couponCode; ?>&wgcustomerid=&wgCurrency=<?php echo $currency; ?>" alt="" />
-</noscript>
+        if(location.protocol.toLowerCase() === "https:") wgProtocol="https";
+        else wgProtocol = "http";
+        wgUri = wgProtocol + "://" + wgSubDomain + ".webgains.com/transaction.html" + "?wgver=" + wgVersion +
+            "&wgprotocol=" + wgProtocol + "&wgsubdomain=" + wgSubDomain + "&wgslang=" + wgsLang + "&wglang=" + wgLang +
+            "&wgprogramid=" + wgProgramID + "&wgeventid=" + wgEventID + "&wgvalue=" + wgOrderValue + "&wgchecksum=" +
+            wgCheckSum + "&wgorderreference="  + wgOrderReference + "&wgcomment=" + encodeURIComponent(wgComment) + "&wglocation=" +
+            encodeURIComponent(document.referrer) + "&wgitems=" + encodeURIComponent(wgItems) + "&wgcustomerid=" + encodeURIComponent(wgCustomerID) +
+            "&wgvouchercode=" + encodeURIComponent(wgVoucherCode) + "&wgCurrency=" + encodeURIComponent(wgCurrency);
+        document.write('<sc'+'ript language="JavaScript"  type="text/javascript" src="'+wgUri+'"></sc'+'ript>');
+    </script>
+    <noscript>
+        <img src="http://track.webgains.com/transaction.html?wgver=<?php echo $webgainsVersion; ?>&wgprogramid=<?php echo $webgainsProgramId; ?>&wgrs=1&wgvalue=<?php echo $orderTotal; ?>&wgeventid=<?php echo $webgainsEventId; ?>&wgorderreference=<?php echo $orderReference; ?>&wgitems=<?php echo $items; ?>&wgvouchercode=<?php echo $couponCode; ?>&wgcustomerid=&wgCurrency=<?php echo $currency; ?>" alt="" />
+    </noscript>
+<?php endif; ?>
