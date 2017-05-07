@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Turiknox_Webgains
+
+ * @category   Turiknox
+ * @package    Turiknox_Webgains
+ * @copyright  Copyright (c) 2017 Turiknox
+ * @license    https://github.com/Turiknox/magento-webgains-tracking/blob/master/LICENSE.md
+ * @version    1.0.0
+ */
+-->
+<config>
+    <modules>
+        <Turiknox_Webgains>
+            <codePool>community</codePool>
+            <active>true</active>
+        </Turiknox_Webgains>
+    </modules>
+</config>

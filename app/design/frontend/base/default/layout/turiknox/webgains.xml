@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Turiknox_Webgains
+
+ * @category   Turiknox
+ * @package    Turiknox_Webgains
+ * @copyright  Copyright (c) 2017 Turiknox
+ * @license    https://github.com/Turiknox/magento-webgains-tracking/blob/master/LICENSE.md
+ * @version    1.0.0
+ */
+-->
+<layout>
+    <checkout_onepage_success>
+        <reference name="content">
+            <block type="turiknox_webgains/webgains" name="turiknox.webgains.tracking" as="webgains_tracking"
+                   after="-" template="webgains/tracking.phtml" />
+        </reference>
+    </checkout_onepage_success>
+</layout>

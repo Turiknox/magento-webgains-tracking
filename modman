@@ -1,0 +1,4 @@
+app/code/community/Turiknox/Webgains app/code/community/Turiknox/Webgains
+app/design/frontend/base/default/layout/turiknox/webgains.xml app/design/frontend/base/default/layout/turiknox/webgains.xml
+app/design/frontend/base/default/template/webgains app/design/frontend/base/default/template/webgains
+app/etc/modules/Turiknox_Webgains.xml app/etc/modules/Turiknox_Webgains.xml

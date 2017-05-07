@@ -1,0 +1,10 @@
+{
+  "name": "turkinox/magento-webgains-tracking",
+  "license": "MIT",
+  "type": "magento-module",
+  "description": "A simple Magento module that will allow you to integrate Webgains tracking code on the checkout success page.",
+  "homepage": "https://github.com/Turiknox/magento-webgains-tracking",
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  }
+}

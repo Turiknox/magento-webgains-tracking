@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Turiknox_Webgains
+
+ * @category   Turiknox
+ * @package    Turiknox_Webgains
+ * @copyright  Copyright (c) 2017 Turiknox
+ * @license    https://github.com/Turiknox/magento-webgains-tracking/blob/master/LICENSE.md
+ * @version    1.0.0
+ */
+-->
+<config>
+    <modules>
+        <Turiknox_Webgains>
+            <version>1.0.0</version>
+        </Turiknox_Webgains>
+    </modules>
+    <global>
+        <blocks>
+            <turiknox_webgains>
+                <class>Turiknox_Webgains_Block</class>
+            </turiknox_webgains>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <turiknox_webgains>
+                    <file>turiknox/webgains.xml</file>
+                </turiknox_webgains>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <webgains>
+                                            <title>Webgains Tracking Section</title>
+                                        </webgains>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>
